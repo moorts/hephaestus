@@ -51,3 +51,9 @@ harness.run(payload).await?;
 ```
 
 For a more extensive example, including setting up a victim server and intercepting its response, see the integration tests in `hephaestus_core/tests`.
+
+## Default Client Implementation
+
+This crate currently depends on my fork of the QUIC client [quinn](https://github.com/quinn-rs/quinn) as the default client implementation.
+The fork adds the functionality to control the CIDs as is needed for the attack, which is the minimum requirement for a quic client to be usable with this
+code.
