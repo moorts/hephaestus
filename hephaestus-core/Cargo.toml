@@ -1,0 +1,30 @@
+[package]
+name = "hephaestus-core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bytes = "1.5.0"
+caps = "0.5.5"
+color-eyre = "0.6.2"
+iptables = "0.5.1"
+log = "0.4.20"
+nfq = "0.2.5"
+pnet = "0.34.0"
+tokio = { version = "1.35.1", features = ["full"] }
+rustls = { version = "*", features = ["dangerous_configuration", "quic"] }
+quinn = { git = "https://github.com/moorts/quinn.git" , optional = true }
+quinn-proto = { git = "https://github.com/moorts/quinn.git" , optional = true }
+simplelog = { version = "0.12.1", features = ["paris"] }
+trait-variant = "0.1.1"
+rcgen = "0.12.1"
+nextest = "0.0.0"
+sudo = "0.6.0"
+rand = "0.8.5"
+ring = "0.16.7"
+pnet_macros = "0.34.0"
+pnet_macros_support = "0.34.0"
+
+[features]
+default = ["quinn-client"]
+quinn-client = ["quinn", "quinn-proto"]

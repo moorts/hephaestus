@@ -1,0 +1,18 @@
+[package]
+name = "hephaestus"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.79"
+tokio = { version = "1.35.1", features = ["full"] }
+rustls = { version = "*", features = ["dangerous_configuration", "quic"] }
+rcgen = "0.12.0"
+quinn = "*"
+quinn-proto = "0.10.6"
+core = { package = "hephaestus-core", path = "../hephaestus-core" }
+simplelog = "0.12.1"
+color-eyre = "0.6.2"
+clap = { version = "4.5.2", features = ["derive"] }
+hex = "0.4.3"
+sudo = "0.6.0"
